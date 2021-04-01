@@ -8,6 +8,7 @@
 	<!-- this POM is released under an Apache 2.0 license -->
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>json-smart</artifactId>
+	<version>2.3-FIX</version>
 	<name>JSON Small and Fast Parser</name>
 	<description>
         JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write. It is easy for machines to parse and generate. It is based on a subset of the JavaScript Programming Language, Standard ECMA-262 3rd Edition - December 1999. JSON is a text format that is completely language independent but uses conventions that are familiar to programmers of the C-family of languages, including C, C++, C#, Java, JavaScript, Perl, Python, and many others. These properties make JSON an ideal data-interchange language.
@@ -47,6 +48,12 @@
 		<maven.compiler.source>1.5</maven.compiler.source>
 		<maven.compiler.target>1.5</maven.compiler.target>
 	</properties>
+	<distributionManagement>
+		<repository>
+			<id>${distributionManagement.releaseDeployment.id}</id>
+			<url>${distributionManagement.releaseDeployment.url}</url>
+		</repository>
+	</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -65,16 +72,6 @@
 		<developerConnection>scm:git:https://github.com/netplex/json-smart-v2.git</developerConnection>
 		<url>https://github.com/netplex/json-smart-v2</url>
 	</scm>
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
 	<profiles>
 		<profile>
 			<id>release-sign-artifacts</id>
